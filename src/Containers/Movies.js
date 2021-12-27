@@ -6,6 +6,8 @@ import { getWishMovies } from "../Redux/actions";
 
 function Movies() {
   const users = useSelector((state) => state.users);
+  const wishedMovies = useSelector((state) => state.wishedMovies);
+
   return (
     <div className="MoviesBox">
       <div className="container">
@@ -20,7 +22,7 @@ function Movies() {
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/w500${elem.poster_path}`}
-                      alt="Movie Image"
+                      alt="Movie_Image"
                     />
                     <h1 className="title">
                       {elem.title || elem.original_name}
@@ -36,7 +38,10 @@ function Movies() {
                     </p>
                     <button
                       className="btn btn-primary w-100 my-1"
-                      onClick={() => getWishMovies(index)}
+                      onClick={() => {
+                        getWishMovies(index);
+                        console.log(wishedMovies.length);
+                      }}
                     >
                       Add to my wishlist <MdOutlineFeaturedPlayList />
                     </button>
