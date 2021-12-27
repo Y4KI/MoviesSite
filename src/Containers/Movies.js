@@ -2,18 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { MoviesWrap } from "../styles/MoviesWrap";
 import { MdOutlineFeaturedPlayList } from "react-icons/md";
-import { getWishMovies } from "../Redux/actions";
+import { getWishMovies, watchMovie } from "../Redux/actions";
+import { Link } from "react-router-dom";
 
 function Movies() {
-  const users = useSelector((state) => state.users);
+  const movies = useSelector((state) => state.movies);
   const wishedMovies = useSelector((state) => state.wishedMovies);
 
   return (
     <div className="MoviesBox">
       <div className="container">
         <div className="row gy-2">
-          {users.length > 0 &&
-            users.map((elem, index) => (
+          {movies.length > 0 &&
+            movies.map((elem, index) => (
               <MoviesWrap
                 className="col-md-6 col-xl-3 d-flex justify-content-center"
                 key={elem.id}
@@ -46,9 +47,13 @@ function Movies() {
                       Add to my wishlist <MdOutlineFeaturedPlayList />
                     </button>
                     <br />
-                    <button className="btn btn-success w-100 my-1">
+                    <Link
+                      className="btn btn-success w-100 my-1"
+                      to={"/watch/" + elem.id}
+                      onClick={() => watchMovie(elem.id)}
+                    >
                       Watch Movie
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </MoviesWrap>

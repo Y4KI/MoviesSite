@@ -1,4 +1,5 @@
 export const InitialState = {
-  users: [],
+  movies: [],
   wishedMovies: [],
+  selectedMovie: {},
 };

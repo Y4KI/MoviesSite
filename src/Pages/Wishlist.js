@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Layout from "../Layout/Index";
+import { watchMovie } from "../Redux/actions";
 import { MoviesWrap } from "../styles/MoviesWrap";
 
 function Wishlist() {
@@ -33,9 +35,13 @@ function Wishlist() {
                     <p>
                       {elem.vote_average} {elem.vote_count}
                     </p>
-                    <button className="btn btn-success w-100 my-1">
+                    <Link
+                      className="btn btn-success w-100 my-1"
+                      to={"/watch/" + elem.id}
+                      onClick={() => watchMovie(elem.id)}
+                    >
                       Watch Movie
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </MoviesWrap>
