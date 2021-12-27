@@ -23,7 +23,7 @@ function WatchMovie() {
             </div>
             <div className="right">
               <p>{movie.overview}</p>
-              <i>{movie.release_date}</i>
+              <i>{movie.release_date}</i>``
               <p>
                 <span>{movie.vote_average}</span> -{" "}
                 <span>{movie.vote_count}</span>

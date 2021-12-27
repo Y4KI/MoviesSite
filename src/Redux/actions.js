@@ -1,6 +1,6 @@
 import { requestApi } from "../Api";
 import dispatch from "./store";
-import { REQUEST_API, WATCH_MOVIE, WISHED_MOVIE } from "./types";
+import { REQUEST_API, SEARCH_MOVIE, WATCH_MOVIE, WISHED_MOVIE } from "./types";
 
 export const getApiData = async () => {
   const response = await requestApi();
@@ -14,4 +14,8 @@ export const getWishMovies = (index) => {
 
 export const watchMovie = (id) => {
   dispatch({ type: WATCH_MOVIE, payload: id });
+};
+
+export const SearchMovie = (text) => {
+  dispatch({ type: SEARCH_MOVIE, payload: text });
 };
