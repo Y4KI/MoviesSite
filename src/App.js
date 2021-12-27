@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import Movies from "./Containers/Movies";
-import Navbar from "./Containers/Navbar";
 import { getApiData } from "./Redux/actions";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Page404 from "./Pages/Page404";
+import Wishlist from "./Pages/Wishlist";
 
 function App() {
   useEffect(() => {
@@ -13,8 +15,13 @@ function App() {
   console.log(users);
   return (
     <div className="App">
-      <Navbar />
-      <Movies />
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="wishlist" element={<Wishlist />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
