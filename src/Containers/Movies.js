@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { BsFillBookmarkFill, BsPlus, BsEye } from "react-icons/bs";
 
 function Movies() {
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.showMovies);
 
   return (
     <div className="MoviesBox">

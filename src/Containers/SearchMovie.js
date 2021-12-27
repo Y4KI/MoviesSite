@@ -1,6 +1,6 @@
-import { Button, TextField } from "@mui/material";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
+import { searchMovie } from "../Redux/actions";
 import { SearchMovieWrap } from "../styles/SearchMovieWrap";
 
 function SearchMovie() {
@@ -15,9 +15,7 @@ function SearchMovie() {
             type="text"
             className="form-control"
             placeholder="Search for movies here!"
-            onChange={(e) => {
-              console.log(e.target.value);
-            }}
+            onChange={(e) => searchMovie(e.target.value)}
           />
         </div>
       </form>

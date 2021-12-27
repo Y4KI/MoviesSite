@@ -16,6 +16,6 @@ export const watchMovie = (id) => {
   dispatch({ type: WATCH_MOVIE, payload: id });
 };
 
-export const SearchMovie = (text) => {
+export const searchMovie = (text) => {
   dispatch({ type: SEARCH_MOVIE, payload: text });
 };
