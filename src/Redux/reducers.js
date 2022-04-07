@@ -33,12 +33,13 @@ export const Reducer = (state = InitialState, { type, payload }) => {
       const allMovies = [...state.movies];
       const newMovies = allMovies.filter((elem) => {
         if (elem.title) {
-          return elem.title.toLowerCase().includes(payload);
+          return elem.title.toLowerCase().includes(payload.toLowerCase() );
         } else {
           return elem.original_name.toLowerCase().includes(payload);
         }
       });
       return { ...state, showMovies: newMovies };
+
     default:
       return state;
   }

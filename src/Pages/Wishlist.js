@@ -64,7 +64,9 @@ function Wishlist() {
                 </div>
               </MoviesWrap>
             ))) || (
-            <h1 className="text-white text-center ">No any Movies yet...</h1>
+            <h1 className="text-white text-center ">
+              You have not chosen any movies yet!
+            </h1>
           )}
         </div>
       </div>

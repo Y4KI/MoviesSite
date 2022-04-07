@@ -1,14 +1,15 @@
 import React from "react";
 import Movies from "../Containers/Movies";
+import Navbar from "../Containers/Navbar";
 import SearchMovie from "../Containers/SearchMovie";
-import Layout from "../Layout/Index";
 
 function Home() {
   return (
-    <Layout>
+    <>
+      <Navbar />
       <SearchMovie />
       <Movies />
-    </Layout>
+    </>
   );
 }
 

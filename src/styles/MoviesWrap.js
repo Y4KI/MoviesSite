@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MoviesWrap = styled.div`
+  margin: 20px 0;
   img {
     width: 100%;
   }
