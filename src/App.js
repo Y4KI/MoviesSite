@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { getApiData } from "./Redux/actions";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -11,9 +10,6 @@ function App() {
   useEffect(() => {
     getApiData();
   }, []);
-
-  const movies = useSelector((state) => state.movies);
-  console.log(movies);
   return (
     <div className="App">
       <Router>
