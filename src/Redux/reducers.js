@@ -35,7 +35,9 @@ export const Reducer = (state = InitialState, { type, payload }) => {
         if (elem.title) {
           return elem.title.toLowerCase().includes(payload.toLowerCase());
         } else {
-          return elem.original_name.toLowerCase().includes(payload);
+          return elem.original_name
+            .toLowerCase()
+            .includes(payload.toLowerCase());
         }
       });
       return { ...state, showMovies: newMovies };

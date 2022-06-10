@@ -73,7 +73,7 @@ function Movies() {
               </MoviesWrap>
             ))
           ) : (
-            <h1>No movies</h1>
+            <h1>No movies yet! check your connection</h1>
           )}
         </div>
       </div>
